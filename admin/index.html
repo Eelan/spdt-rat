@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071a28" />
+    <title>SPDT · Administration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <main class="admin">
+      <header class="admin-header"><div><p>SPDT · Administration</p><h1>Gestion des RAT</h1></div><a href="../index.html">Voir les listes</a></header>
+      <div class="teams">
+        <section class="team left-team"><header><h2>RAT Gauche</h2><span id="left-count"></span></header><div class="roster" id="left-list"></div><button class="add" data-team="left" type="button">+ Ajouter un joueur</button></section>
+        <section class="team right-team"><header><h2>RAT Droite</h2><span id="right-count"></span></header><div class="roster" id="right-list"></div><button class="add" data-team="right" type="button">+ Ajouter un joueur</button></section>
+      </div>
+    </main>
+    <template id="player-template">
+      <div class="player-row">
+        <span class="position"></span>
+        <label><span>Joueur</span><input class="name" maxlength="40" aria-label="Nom du joueur" /></label>
+        <label><span>Puissance</span><input class="power" inputmode="numeric" aria-label="Puissance du joueur" /></label>
+        <label class="rally"><input class="creator" type="checkbox" /><span>Peut créer un ralliement</span></label>
+        <button class="move" type="button" aria-label="Déplacer ce joueur vers l’autre RAT">⇄</button>
+        <button class="delete" type="button" aria-label="Supprimer ce joueur">×</button>
+      </div>
+    </template>
+    <script src="../data.js"></script>
+    <script src="./admin.js"></script>
+  </body>
+</html>
