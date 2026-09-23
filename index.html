@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071a28" />
+    <title>SPDT · RAT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="teams" aria-label="Répartition SPDT">
+      <section class="team left-team" aria-labelledby="left-title">
+        <header class="team-header"><h1 id="left-title">RAT <span>Gauche</span></h1><span id="left-count"></span></header>
+        <div class="player-list" id="left-list"></div>
+      </section>
+      <section class="team right-team" aria-labelledby="right-title">
+        <header class="team-header"><h1 id="right-title">RAT <span>Droite</span></h1><span id="right-count"></span></header>
+        <div class="player-list" id="right-list"></div>
+      </section>
+    </main>
+    <template id="player-template">
+      <article class="player-row"><span class="position"></span><span class="avatar"></span><span class="player-name"></span><span class="creator">Ralliement</span></article>
+    </template>
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
