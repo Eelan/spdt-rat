@@ -1,4 +1,4 @@
-const teams = loadRoster();
+let teams = { left: [], right: [] };
 
 function render(team) {
   const list = document.getElementById(`${team}-list`);
@@ -17,5 +17,10 @@ function render(team) {
   });
 }
 
-render('left');
-render('right');
+loadRoster().then(roster => {
+  teams = roster;
+  render('left'); render('right');
+  document.getElementById('status').textContent = '';
+}).catch(error => {
+  document.getElementById('status').textContent = 'Impossible de charger les équipes. ' + error.message;
+});

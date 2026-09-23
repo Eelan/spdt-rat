@@ -1,0 +1,12 @@
+begin;
+grant select, insert, update, delete on public.players to anon, authenticated;
+drop policy if exists admin_insert on public.players;
+drop policy if exists admin_update on public.players;
+drop policy if exists admin_delete on public.players;
+drop policy if exists public_insert on public.players;
+drop policy if exists public_update on public.players;
+drop policy if exists public_delete on public.players;
+create policy public_insert on public.players for insert to anon, authenticated with check (true);
+create policy public_update on public.players for update to anon, authenticated using (true) with check (true);
+create policy public_delete on public.players for delete to anon, authenticated using (true);
+commit;

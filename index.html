@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <p id="status" role="status" class="status">Chargement des équipes…</p>
     <main class="teams" aria-label="Répartition SPDT">
       <section class="team left-team" aria-labelledby="left-title">
         <header class="team-header"><h1 id="left-title">RAT <span>Gauche</span></h1><span id="left-count"></span></header>
@@ -24,7 +25,8 @@
     <template id="player-template">
       <article class="player-row"><span class="position"></span><span class="avatar"></span><span class="player-name"></span><span class="creator">Ralliement</span></article>
     </template>
-    <script src="./data.js"></script>
+    <script src="./config.js"></script>
+    <script src="./supabase.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
